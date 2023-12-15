@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background: #191A1D;
+  --background-card: #212429;
+  --theme-blue-color: #1967d2;
+  --default-color: #e3e3e3;
+  --secondary-color: #c7c7c7
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,15 +18,86 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --tw-text-opacity: 1;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background);
+  overflow-x: hidden;
+}
+
+section {
+  padding: 1rem;
+}
+
+a {
+  color: #8ab4f8;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, .default-color {
+  color: var(--default-color);
+}
+
+.font-color-primary {
+  color: var(--theme-blue-color);
+}
+
+.font-color-secondary {
+  color: var(--secondary-color);
+}
+
+.border-theme {
+  border-color: var(--theme-blue-color);
+}
+
+.bg-theme {
+  background: var(--theme-blue-color);
+}
+
+.span-bg-theme {
+  background: var(--theme-blue-color);
+}
+
+.img-circle {
+  object-fit: cover;
+}
+
+.card {
+  background: var(--background-card);
+}
+
+.circle-bg {
+  background: var(--background);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--background);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
