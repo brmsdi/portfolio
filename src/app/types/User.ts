@@ -1,46 +1,9 @@
-type Resume = {
-    id: number,
-    title: string,
-    typeIcon: number
-}
-type Life = {
-    id: number,
-    moment: string,
-    description: string
-}
-export type Project = {
-    id: number
-    name: string,
-    full_name: string,
-    description: string,
-    icons?: string,
-    homepage?: string,
-    html_url: string
-    image: string
-}
-export type Technology = {
-    id: number
-    title: string,
-    description: string,
-    image: string
-}
-export type Contact = {
-    id: number
-    title: string,
-    text: string
-    link?: string,
-    image: string
-}
-export type Repo = {
-    full_name: string
-}
-export const myRepos: Repo[] = [
-    {
-        full_name: "brmsdi/GCSystem"
-    }, {
-        full_name: "brmsdi/GCSystemAndroid"
-    }
-]
+import { Contact } from "./Contact"
+import { LifeType } from "./LifeType"
+import { Repo } from "./Repo"
+import { Resume } from "./Resume"
+import { Technology } from "./Technology"
+
 export type User = {
     name: string,
     surname: string,
@@ -48,12 +11,30 @@ export type User = {
     photo: string,
     specialty: string,
     resume: Resume[],
-    life: Life[],
-    names_projects: Repo[],
+    life: LifeType[],
+    repos_projects: Repo[],
     technologies: Technology[],
     contacts: Contact[]
 }
-
+export const myRepos: Repo[] = [
+    {
+        full_name: "brmsdi/GCSystem", 
+        image: "gcsystem_img.png",
+        priority: 1
+    }, {
+        full_name: "brmsdi/GCSystemAndroid",
+        priority: 2
+    }, {
+        full_name: "brmsdi/GCSystemPayment",
+        priority: 2
+    }, {
+        full_name: "brmsdi/BuilderMaster",
+        priority: 3
+    }, {
+        full_name: "brmsdi/ecommerce",
+        priority: 3
+    }
+]
 export const UserFill: User = {
     name: 'Wisley',
     surname: 'Marques',
@@ -95,13 +76,13 @@ export const UserFill: User = {
     life: [
         {
             id: 1,
-            moment: "2019",
+            moment: "No início",
             description: "Jovem aprendiz – Secretaria de Estado de Educação e Qualidade do Ensino, SEDUC-AM. Primeiro contato com linguagem de programação e processamento de dados."
         },
         {
             id: 2,
             moment: "2020",
-            description: "Iniciando com linguagem C e conhecendo conceitos de estrutura de dados. Adotei o Java com a primeira linguagem de programação orientada a objetos. Comecei a desenvolvedor sistemas desktop. Me aprofundei em conceitos avançados como threads, interfaces, paradigmas de linguagens de programação, programação reativa, framework spring, API rest.."
+            description: "Iniciando com linguagem C e conhecendo conceitos de estrutura de dados. Adotei o Java como primeira linguagem de programação orientada a objetos. Comecei a desenvolvedor sistemas desktop. Me aprofundei em conceitos avançados como threads, interfaces, paradigmas de linguagens de programação, programação reativa, framework spring, API rest.."
         },
         {
             id: 3,
@@ -124,7 +105,7 @@ export const UserFill: User = {
             description: "Estudando inglês e buscando vaga de desenvolvedor."
         }
     ],
-    names_projects: myRepos,
+    repos_projects: myRepos,
     technologies: [{
         id: 1,
         title: "Desenvolvimento com Java",
@@ -166,6 +147,11 @@ export const UserFill: User = {
         title: "Desenvolvimento frontend",
         description: "Desenvolvimento de páginas web com HTML5, Tailwind, ReactJS, Typescript, Redux...",
         image: "react-original-wordmark.svg"
+    }, {
+        id: 8,
+        title: "Banco de dados",
+        description: "Projeto, criação e manipulação de banco de dados relacionais e não relacionais. Comandos DDL, DML...",
+        image: "mysql-original-wordmark.svg"
     }
 ],
     contacts: [{

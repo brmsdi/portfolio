@@ -1,14 +1,10 @@
 import CardContact from "@/app/components/cardContact/card-contact";
-import { UserFill } from "@/app/types/user";
+import { UserFill } from "@/app/types/User";
 
 export default function ContactSection() {
     const data = UserFill.contacts.map(item => {
         return <CardContact
-            id={item.id}
-            title={item.title}
-            text={item.text}
-            link={item.link}
-            image={item.image} 
+            {...item}
             key={item.id}/>
     })
     return (

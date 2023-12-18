@@ -1,7 +1,8 @@
-import { Project } from "@/app/types/user"
+import { defaultImages } from "@/app/types/Constants"
+import { ProjectType } from "@/app/types/Project"
 import Link from "next/link"
 
-export default function CardProject(props: Project) {
+export default function CardProject(props: ProjectType) {
     return (
         <div className={`
         card flex flex-col p-4 gap-1 rounded-lg border-2 border-zinc-500 w-full cursor-pointer hover:bg-gray-700 break-words
@@ -29,15 +30,15 @@ export default function CardProject(props: Project) {
             }
             {
                 props.image ? <div className={`
-                flex items-center justify-center w-full h-32
+                flex items-center justify-center w-full max-w-full h-32
                 `}>
-                    <img src={"next.svg"} alt="icon" />
+                    <img className={`w-full max-w-full h-full max-h-full rounded-md`} src={props.image} alt="icon" />
                 </div> 
                 :
                 <div className={`
                 flex items-center justify-center w-full h-32 bg-slate-400 rounded-lg
                 `}>
-                    <img src={"github-original-wordmark.svg"} alt="icon" />
+                    <img src={defaultImages.default_img_project} alt="icon" />
                 </div> 
             }
         </div>

@@ -1,6 +1,8 @@
 "use client";
 import CardProject from "@/app/components/cardProject/card-project";
-import { Project, UserFill } from "@/app/types/user";
+import { ProjectType } from "@/app/types/Project";
+import { Repo } from "@/app/types/Repo";
+import { UserFill } from "@/app/types/User";
 import { Octokit } from "octokit";
 import { useEffect, useState } from "react";
 
@@ -8,20 +10,26 @@ export default function ProjectSection() {
     const octokit = new Octokit({ auth: process.env.GIT_KEY });
     const [data, setData] = useState<JSX.Element[]>()
 
-    function mountCards(projects: Project[]) {
+    function mountCards(projects: ProjectType[]) {
         var mounted = projects.map(item => {
             return <CardProject
-                id={item.id}
-                name={item.name}
-                full_name={item.full_name}
-                description={item.description}
-                icons={item.icons}
-                homepage={item.homepage}
-                html_url={item.html_url}
-                image={item.image}
+                {...item}
                 key={item.id} />
         })
         setData(mounted)
+    }
+
+    function setProperties(projects: ProjectType[], repos: Repo[]) {
+        if (projects.length === 0 || repos.length === 0) return
+        projects.forEach(project => {
+            var repo = repos.find(it => it.full_name === project.full_name)
+            if (repo !== undefined) {
+                if (repo.image) {
+                    project.image = repo.image
+                }
+                project.priority = repo.priority
+            }
+        })
     }
 
     useEffect(() => {
@@ -30,9 +38,13 @@ export default function ProjectSection() {
                 'X-GitHub-Api-Version': '2022-11-28'
             }
         }).then(response => {
-            var projects: Project[] = response.data
-                .filter((element: { full_name: string; }) => UserFill.names_projects.map(repo => repo.full_name).includes(element.full_name))
-                .map((project: Project) => project)
+            var projects: ProjectType[] = response.data
+                .filter((element: { full_name: string; }) => UserFill.repos_projects.map(repo => repo.full_name).includes(element.full_name))
+                .map((project: ProjectType) => project)
+            setProperties(projects, UserFill.repos_projects)
+
+            projects.sort((it1, it2) => it1.priority - it2.priority)
+            console.log(projects)
             mountCards(projects)
         }).catch(error => {
             console.log(error)

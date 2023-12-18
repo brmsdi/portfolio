@@ -2,7 +2,7 @@ import { IconClipboardCheck, IconClipboardList, IconCode, IconDatabase, IconDevi
 import Life from "@/app/components/life/Life";
 import LifeEnd from "@/app/components/lifeEnd/LifeAnd";
 import LineAboutMe from "@/app/components/line/line-about-me";
-import { UserFill } from "@/app/types/user";
+import { UserFill } from "@/app/types/User";
 
 export default function AboutMe() {
     const sizeIcone = 28

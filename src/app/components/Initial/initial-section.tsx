@@ -1,4 +1,4 @@
-import { UserFill } from "@/app/types/user"
+import { UserFill } from "@/app/types/User"
 
 export default function InitialSection() {
     return (

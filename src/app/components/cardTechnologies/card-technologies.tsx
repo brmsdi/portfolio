@@ -1,4 +1,4 @@
-import { Technology } from "@/app/types/user"
+import { Technology } from "@/app/types/User"
 
 export default function CardTechnologies(props: Technology) {
     return (

@@ -1,4 +1,4 @@
-import { Contact } from "@/app/types/user";
+import { Contact } from "@/app/types/Contact";
 import Link from "next/link";
 
 export default function CardContact(props: Contact) {

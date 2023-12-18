@@ -1,13 +1,10 @@
-import { UserFill } from "@/app/types/user";
+import { UserFill } from "@/app/types/User";
 import CardTechnologies from "@/app/components/cardTechnologies/card-technologies"
 
 export default function TechnologiesSection() {
     const data = UserFill.technologies.map(item => {
         return <CardTechnologies
-            id={item.id}
-            title={item.title}
-            description={item.description}
-            image={item.image}
+            {...item}
             key={item.id} />
     })
     return (
