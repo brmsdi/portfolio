@@ -1,3 +1,4 @@
+"use client";
 import InitialSection from "@/app/components/Initial/initial-section";
 import AboutMe from "@/app/components/about/about-me";
 import ProjectSection from "@/app/components/projectsSection/project-section";
