@@ -11,13 +11,8 @@ import { gcsystemInit } from "@/app/services/api-service";
 export default function HomePage() {
 
     useEffect(() => {
+        // INICIAR SERVIDOR DO PROJETO (RENDER FREE)
         gcsystemInit()
-        .then(response => {
-            console.log("Gcsystem inicializado")
-        })
-        .catch(error => {
-            console.log("TIMEOUT")
-        })
     }, [])
     return (
         <>
