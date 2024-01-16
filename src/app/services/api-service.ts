@@ -2,5 +2,5 @@ import axios from "axios";
 
 
 export function gcsystemInit() {
-    return axios.get("https://systemgc.netlify.app/login/")
+    return axios.get("https://gcsystemws.onrender.com/")
 }
