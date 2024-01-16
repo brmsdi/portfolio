@@ -7,5 +7,5 @@ export type ProjectType = {
     homepage?: string,
     html_url: string,
     image?: string,
-    priority: number
+    priority: number,
 }

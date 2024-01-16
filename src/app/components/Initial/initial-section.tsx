@@ -4,7 +4,7 @@ export default function InitialSection() {
     return (
         <section className={`
         flex flex-col gap-4 items-center justify-center
-        h-screen md:w-4/5
+        h-screen md:w-5/5
         `}>
             <div className={`
             flex gap-2 font-semibold text-3xl tracking-wide

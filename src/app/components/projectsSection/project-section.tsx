@@ -42,9 +42,7 @@ export default function ProjectSection() {
                 .filter((element: { full_name: string; }) => UserFill.repos_projects.map(repo => repo.full_name).includes(element.full_name))
                 .map((project: ProjectType) => project)
             setProperties(projects, UserFill.repos_projects)
-
             projects.sort((it1, it2) => it1.priority - it2.priority)
-            console.log(projects)
             mountCards(projects)
         }).catch(error => {
             console.log(error)
