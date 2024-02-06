@@ -45,7 +45,7 @@ export default function ProjectSection() {
             projects.sort((it1, it2) => it1.priority - it2.priority)
             mountCards(projects)
         }).catch(error => {
-            console.log(error)
+            
         })
     }, [])
 

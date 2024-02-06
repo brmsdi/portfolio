@@ -8,7 +8,7 @@ export default function CardTechnologies(props: Technology) {
         lg:w-1/5
         `}>
             <div>
-            <img src={"icones.svg"} alt="icon" />
+            <img src={"/icones.svg"} alt="icon" />
             </div>
             <div className={`
             flex items-center justify-center

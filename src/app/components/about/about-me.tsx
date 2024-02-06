@@ -32,7 +32,7 @@ export default function AboutMe() {
                 <img className={`
                     img-circle w-44 h-44 rounded-full overflow-hidden cursor-pointer
                     sm:w-56 sm:h-56
-                    `} src={"user_icon.png"} alt="Minha foto" />
+                    `} src={"/user_icon.png"} alt="Minha foto" />
                 <div>
                     <div className={`
                     default-color bg-theme flex items-center justify-center gap-2 py-2 w-2/5 cursor-pointer

@@ -5,9 +5,12 @@ import Link from "next/link"
 import GalleryProject from "@/app/components/gallery/gallery-project";
 import { myGalleryImages } from "@/app/types/User";
 
+const MAX_IMAGE = 3
+
 export default function CardProject(props: ProjectType) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const gallery = myGalleryImages.find(it => it.full_name === props.full_name)
+
     return (
         <div className={`
         card flex flex-col justify-between p-4 gap-2 rounded-lg border-2 border-zinc-500 w-full cursor-pointer hover:bg-gray-700 break-words
@@ -15,7 +18,7 @@ export default function CardProject(props: ProjectType) {
         lg:w-1/5
         `}>
             <div>
-                <img src={"icones.svg"} alt="icon" />
+                <img src={"/icones.svg"} alt="icon" />
             </div>
             <p className={`
             default-color text-base font-semibold
