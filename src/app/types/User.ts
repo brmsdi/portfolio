@@ -259,7 +259,7 @@ export const myGalleryImages : GalleryImage[] = [{
         id: 1,
         image: "/gallery/mobile/soneca_01.jpg",
         device: MOBILE,
-        description: "Tela para inserir um novo alarme no bando de dados. Esta rotina inicia após o usuário realizar um clique no mapa, a latitude e longitude serão vinculados ao alarme."
+        description: "Tela para inserir um novo alarme no banco de dados. Esta rotina inicia após o usuário realizar um clique no mapa, a latitude e longitude serão vinculadas ao alarme."
     }, {
         id: 2,
         image: "/gallery/mobile/soneca_02.jpg",
